@@ -1,0 +1,21 @@
+{
+  "name": "react-native-skia-offscreencanvas",
+  "version": "0.1.0",
+  "description": "The browser-like OffscreenCanvas API for React Native.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hans <me@hans00.me>",
+  "license": "MIT",
+  "dependencies": {
+    "tseep": "^1.2.1"
+  },
+  "peerDependencies": {
+    "@shopify/react-native-skia": ">=0.1.227"
+  },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mybigday/react-native-skia-offscreencanvas.git"
+  }
+}
