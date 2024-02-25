@@ -182,7 +182,7 @@ class CanvasRenderingContext2D {
     return new ImageData(pixels, width, height)
   }
 
-  drawImage(image, dx, dy, dw, dh, sx, sy, sw, sh) {
+  drawImage(image, ...args) {
     let img
     let width
     let height
@@ -197,9 +197,11 @@ class CanvasRenderingContext2D {
     } else {
       throw new Error('Invalid image')
     }
-    if (arguments.length === 3) {
+    if (args.length === 2) {
+      const [dx, dy] = args
       this._ctx.drawImage(img, dx, dy)
-    } else if (arguments.length === 5) {
+    } else if (args.length === 4) {
+      const [dx, dy, dw, dh] = args
       this._ctx.drawImageRect(
         img,
         {
@@ -217,6 +219,7 @@ class CanvasRenderingContext2D {
         getPaint(),
       )
     } else {
+      const [sx, sy, sw, sh, dx, dy, dw, dh] = args
       this._ctx.drawImageRect(
         img,
         {
